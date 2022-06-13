@@ -1,0 +1,25 @@
+<a class="product__item"
+[routerLink]="index"
+>
+  <article class="card">
+    <img [src]="product.imagePath" [alt]="product.name" />
+
+    <div class="card__content">
+        <h2 class="card__name">{{product.name}}</h2>
+        <p class="card__description">
+            {{product.description}}
+        </p>
+        <p class="card__type">{{product.type}}</p>
+        <ul class="price-list">
+            <li  
+            class="price-list__item"
+            *ngFor="let price of product.prices">
+                {{price}}
+            </li>
+        </ul>
+    </div>
+    <button class="card__button">
+        add to card
+    </button>
+  </article>
+</a>
