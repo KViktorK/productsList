@@ -1,19 +1,15 @@
-interface IPrice {
-  value: number;
-}
-
 export class Product {
   public name: string;
   public description: string;
   public imagePath: string;
-  public prices: IPrice[];
+  public prices: number[];
   public type:string
 
   constructor(
     name: string,
     description: string,
     imagePath: string,
-    prices: IPrice[],
+    prices: number[],
     type:string
   ) {
     this.name = name;

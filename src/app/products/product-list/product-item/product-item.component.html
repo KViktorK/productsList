@@ -1,9 +1,8 @@
-<a class="product__item"
+<li class="product__item"
 [routerLink]="index"
 >
   <article class="card">
-    <img [src]="product.imagePath" [alt]="product.name" />
-
+    <img class="card__img" [src]="product.imagePath" [alt]="product.name" />
     <div class="card__content">
         <h2 class="card__name">{{product.name}}</h2>
         <p class="card__description">
@@ -22,4 +21,4 @@
         add to card
     </button>
   </article>
-</a>
+</li>

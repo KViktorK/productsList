@@ -8,21 +8,24 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { ProductItemComponent } from './products/product-list/product-item/product-item.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductService } from './products/product.service';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     ProductListComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule,
     ReactiveFormsModule,
+    RouterModule.forRoot([])
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
