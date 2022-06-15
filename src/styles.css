@@ -48,6 +48,10 @@ button, input[type="submit"], input[type="reset"] {
 	cursor: pointer;
 	outline: inherit;
 }
+textarea, input,select { 
+  outline: none;
+  border: none;
+}
 .container{
     width: 100%;
     padding: 0 15px;

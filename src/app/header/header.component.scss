@@ -10,6 +10,7 @@
     list-style: none;
     display: flex;
     &__link {
+      width: 100%;
       display: block;
       padding: 15px 30px;
       border: 1px solid #fff;
@@ -19,6 +20,26 @@
     }
     &__item:not(:last-child) {
       margin-right: 10px;
+    }
+  }
+  .search{
+    position: relative;
+    width: 100%;
+    margin: 0 50px;
+    &__input{
+      border-radius: 10px;
+      width: 100%;
+      padding: 15px 0;
+      padding-left: calc(20px + 15px + 8px)
+    }
+    &__svg{
+        position: absolute;
+        fill:#6b6b6b;
+        top: 15px;
+        left: 15px;
+        width: 20px;
+       height: 20px;
+      
     }
   }
 }

@@ -1,8 +1,26 @@
 .product-form {
-  .product-form__item {
+  &__item.type{
+      .item-label{
+        display: block;
+      }
+      .select{
+        background-color: #fff;
+        border-radius: 10px;
+        border: 2px solid #2196f3;
+        width: 100%;
+        padding-left: 10px;
+      }
+  }
+  &__item {
     margin-bottom: 10px;
     .item-input {
       width: 100%;
+      border-radius: 10px;
+      border: 2px solid #2196f3;
+      padding: 10px;
+    }
+    .item-label{
+      margin-bottom: 5px;
     }
   }
 
@@ -11,4 +29,11 @@
     color: #2196f3;
     border: 2px solid #2196f3;
   }
+}
+.is-invalid {
+  border: 2px solid red;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
 }

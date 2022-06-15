@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 import { ToggleService } from './shared/switchService';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { FilterPipe } from './shared/filte.pipe';
+import { ErrorComponent } from './products/product-edit/error/error.component';
 
 
 
@@ -34,7 +35,8 @@ import { FilterPipe } from './shared/filte.pipe';
     ModalComponent,
     ProductDetailComponent,
     DropdownDirective,
-    FilterPipe
+    FilterPipe,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

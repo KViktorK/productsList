@@ -1,14 +1,46 @@
 .product__item {
-    width: 100%;
-    .card {
+  display: block;
+  width: 100%;
+  .card {
+    position: relative;
     display: flex;
-      padding: 16px;
-      border-radius: 4px;   
-      .card__img{
+    padding: 16px;
+    border-radius: 4px;
+    &__img {
       display: block;
       max-width: 50%;
-      height: auto;
+      height: auto; 
+      margin-right: 15px;
     }
-      }
+    &__cancel {
+      top:0;
+      right: 0;
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      fill: #2196f3;
+   }
+   .price-list{
+    display: flex;
+    &__item{
+      margin-right: 8px;
+    }
+    &__svg{
+      width: 15px;
+      height: 15px;
+    }
+  }
+  }
+}
+.admin-btn-list{
+display: flex;
+  justify-content: flex-end;
+  &__button{
+    margin-left: 10px;
+    border-radius: 10px;
+    color: #2196f3;
+    border: 2px solid #2196f3;
+  padding: 10px 15px;
   }
   
+}

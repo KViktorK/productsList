@@ -9,7 +9,7 @@ import { Product } from '../../product.model';
 export class ProductItemComponent implements OnInit {
   @Input() product:Product;
   @Input() index:number
-
+  basicImg= "../../../../assets/sprite/symbol-defs.svg#icon-camera"
   isExpanded:boolean;
 
   changeExpanded(e:Event){

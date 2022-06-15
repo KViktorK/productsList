@@ -1,12 +1,25 @@
 import { Injectable} from "@angular/core";
 import { BehaviorSubject, Subject  } from "rxjs";
 import { Price, Product } from "./product.model";
-
+interface IFilter{
+  monitor:boolean
+  computer:boolean
+  phone:boolean
+}
 @Injectable()
 export class ProductService {
+  public filter:IFilter = {
+    monitor:true, 
+    computer:true, 
+    phone:true
+  }
+
   public productsChanged = new Subject<Product[]>();
+  
   public search = new BehaviorSubject<string>("");
-  private products: Product[] = [
+  
+  
+  public products: Product[] = [
     new Product( 
       "Smartfon SAMSUNG Galaxy A52",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet velit lorem, sed sodales tortor vehicula id. Nam at molestie diam. Nullam hendrerit iaculis risus, ac sagittis elit. Mauris tincidunt vulputate velit id pellentesque. Proin fermentum lacinia est id pulvinar. Integer sagittis gravida arcu, eu ullamcorper turpis viverra vel. Sed nunc arcu, faucibus vitae porttitor nec, tincidunt sit amet elit. Aenean venenatis, elit ac rhoncus ultricies, lorem augue ultricies mauris, sed facilisis mauris arcu sit amet diam. Praesent ullamcorper a dolor vel vulputate. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Cras rhoncus imperdiet aliquam.",
@@ -59,7 +72,13 @@ export class ProductService {
     ),
   ];
   getProducts() {
-    return this.products;
+    return this.products.filter(
+      x=> 
+      (x.type === 'phone' && this.filter.phone)
+      || (x.type === 'computer' && this.filter.computer) 
+      || (x.type === 'monitor' && this.filter.monitor) 
+      )
+    
   }
   getProduct(index: number) {
     return this.products[index];

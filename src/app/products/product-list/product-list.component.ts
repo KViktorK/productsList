@@ -15,6 +15,11 @@ import { ProductService } from "../product.service";
 export class ProductListComponent implements OnInit {
   isAdmin: boolean;
   products: Product[];
+  
+  filter;
+  
+  filteredProduct:Product[] = []
+  
   subscription: Subscription;
   searchKey: string = "";
   constructor(
@@ -37,12 +42,18 @@ export class ProductListComponent implements OnInit {
         this.products = product;
       }
     );
-    this.products = this._productService.getProducts();
+
+    this.products  = this._productService.getProducts();
+    
+    this.filter = this._productService.filter
+
     this._productService.search.subscribe((val:string)=>{
-      this.searchKey=val
+      this.searchKey = val
     })
   }
-
+  filterChange(){
+    this.products  = this._productService.getProducts();
+  }
   onNewProduct() {
     this._router.navigate(["products/new"]);
     let modal_t = document.getElementById("modal_product");

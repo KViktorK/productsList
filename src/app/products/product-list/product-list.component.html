@@ -4,6 +4,9 @@
 >
     New Product
 </button>
+<input type="checkbox"  [(ngModel)]="filter.phone" (ngModelChange)="filterChange()" /> Phone 
+<input type="checkbox" [(ngModel)]="filter.computer" (ngModelChange)="filterChange()" /> Computer 
+<input type="checkbox" [(ngModel)]="filter.monitor" (ngModelChange)="filterChange()" /> Monitor
 <div class="container">
     <ul class="products-list">
         <app-product-item

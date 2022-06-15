@@ -1,11 +1,14 @@
 <header class="page-header">
   <ul class="nav">
     <li class="nav__item">
-      <a class="nav__link" routerLink="products" href="#">Products Store</a>
+      <a class="nav__link" routerLink="products">Store</a>
     </li>
   </ul>
   <div class="search">
-    <input type="text" class="search__input" [(ngModel)]="searchValue" (keyup)="search($event)">
+    <svg class="search__svg">
+      <use href="../../assets/sprite/symbol-defs.svg#icon-search"></use>
+    </svg>
+    <input type="text" class="search__input" [(ngModel)]="searchValue" (keyup)="search($event)" placeholder="Search products">
   </div>
 <div class="switch">
    <label class="switch__label">User</label>

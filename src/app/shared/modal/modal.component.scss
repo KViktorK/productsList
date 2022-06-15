@@ -5,19 +5,22 @@
   display: none;
 }
 .modal {
-    z-index: 1000;
-    position: fixed;
-    float: left;
-    left: 50%;
-    top: 30%;
-    transform: translate(-50%, -50%);
-    max-width: 50%;
-    height: 50%;
+  z-index: 1000;
+  position: fixed;
+  float: left;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  max-width: 50%;
+  height: 50%;
 }
 .modal-body {
-    display: flex;
-    justify-content: center;
-  background: #fff;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 1px -1px #2196f3, 0px 1px 1px 0px #2196f3,
+    0px 1px 3px 0px #2196f3;
   padding: 25px;
   width: 100%;
 }

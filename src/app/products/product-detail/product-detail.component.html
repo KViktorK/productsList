@@ -7,23 +7,32 @@
         <p class="card__description">
           {{ product.description }}
         </p>
-        <p class="card__type">{{ product.type }}</p>
         <ul class="price-list">
+          Price: 
           <li class="price-list__item" *ngFor="let price of product.prices">
             {{ price.value }}
+            <svg class="price-list__svg">
+              <use  href="./../../../../assets/sprite/symbol-defs.svg#icon-euro"></use>
+            </svg>
           </li>
         </ul>
-      </div>
-    </article>
-    <div class="product__item-btn"
+        <div class="admin-btn-list"
     *ngIf="isAdmin">
       <button 
       (click)="onEditProduct()"
-      class="card__button">Edit</button>
-      <button class="card__button"
+      class="admin-btn-list__button">Edit</button>
+      <button class="admin-btn-list__button"
       (click)="onDelete()"
       >Delete</button>
     </div>
+      </div>
+      <button  (click)="onCancel()">
+        <svg class="card__cancel">
+          <use href="../../../assets/sprite/symbol-defs.svg#icon-cross"></use>
+        </svg>
+      </button>
+    </article>
+    
   </li>
-  <button (click)="onCancel()">X</button>
+  
 </app-modal>

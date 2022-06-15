@@ -1,9 +1,19 @@
 <app-modal id="modal_product">
-  <form class="product-form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <form class="product-form" [formGroup]="productForm">
     <h2 class="product-form__title">Please provide product details</h2>
     <div class="product-form__item">
       <label for="name" class="item-label">Name</label>
-      <input class="item-input" id="name" type="text" formControlName="name" />
+      <input
+        [ngClass]="isFieldValid('name') ? 'is-invalid' : 'item-input'"
+        id="name"
+        type="text"
+        formControlName="name"
+      />
+      <app-error
+        [displayError]="isFieldValid('name')"
+        errorMsg="Product name is required"
+      >
+      </app-error>
     </div>
     <div class="product-form__item">
       <label for="imagePath" class="item-label">Image Url</label>
@@ -17,25 +27,38 @@
     <div class="product-form__item">
       <label for="description" class="item-label">Description</label>
       <textarea
-        class="item-input"
+        [ngClass]="isFieldValid('description') ? 'is-invalid' : 'item-input'"
         id="description"
         type="text"
         formControlName="description"
       ></textarea>
+      <app-error
+        [displayError]="isFieldValid('description')"
+        errorMsg="Product description is required"
+      >
+      </app-error>
     </div>
-    <div class="product-form__item">
+    <div class="product-form__item type">
       <label for="type" class="item-label">Type</label>
-      <select formControlName="type">
-        <option *ngFor="let type of typeList
-        "[ngValue]="type.name"
-        >{{type.name}}</option>
+      <select 
+      [ngClass]="isFieldValid('type')?'is-invalid':'item-input'"
+      formControlName="type">
+        <option 
+        *ngFor="let type of typeList" [ngValue]="type.name">
+          {{ type.name }}
+        </option>
       </select>
+      <app-error
+        [displayError]="isFieldValid('type')"
+        errorMsg="Product description is type"
+      >
+      </app-error>
     </div>
     <div formArrayName="prices">
       <div
         class="product-form__item"
         *ngFor="
-          let ingredientCtrl of productForm.get('prices')['controls'];
+          let productCtrl of productForm.get('prices')['controls'];
           let i = index
         "
         [formGroupName]="i"
@@ -59,11 +82,11 @@
       </button>
     </div>
     <button
-      type="submit"
+      (click)="onSubmit()"
       class="btn btn-success"
-      [disabled]="!productForm.valid"
+
     >
-      Save
+     Save
     </button>
     <button type="button" class="btn btn-danger" (click)="onCancel()">
       Cancel
