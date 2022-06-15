@@ -20,6 +20,7 @@ import { ToggleService } from './shared/switchService';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { FilterPipe } from './shared/filte.pipe';
 import { ErrorComponent } from './products/product-edit/error/error.component';
+import { AlerModalComponent } from './products/product-edit/aler-modal/aler-modal.component';
 
 
 
@@ -36,7 +37,8 @@ import { ErrorComponent } from './products/product-edit/error/error.component';
     ProductDetailComponent,
     DropdownDirective,
     FilterPipe,
-    ErrorComponent
+    ErrorComponent,
+    AlerModalComponent
   ],
   imports: [
     BrowserModule,

@@ -4,11 +4,11 @@
         display: block;
       }
       .select{
-        background-color: #fff;
         border-radius: 10px;
         border: 2px solid #2196f3;
         width: 100%;
         padding-left: 10px;
+        background-color: #fff;
       }
   }
   &__item {
@@ -22,10 +22,31 @@
     .item-label{
       margin-bottom: 5px;
     }
+   
   }
-
-  .btn {
-    padding: 15px;
+  
+  .price-btn{
+    margin-bottom: 50px;
+    border: 2px solid #2196f3;
+    color: #2196f3;
+    border-radius: 10px;
+    padding: 10px 15px;
+  }
+  &__item.price{
+    display: flex;
+  }
+.cancel-btn{
+  color: #2196f3;
+  padding: 10px 15px;
+}
+  
+.admin-btn{
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  border-radius: 10px;
+  padding: 15px 50px;
     color: #2196f3;
     border: 2px solid #2196f3;
   }
@@ -36,4 +57,7 @@
   padding: 10px;
   border-radius: 10px;
   background-color: #f8f8f8;
+}
+.item-input.price{
+  position: relative;
 }
