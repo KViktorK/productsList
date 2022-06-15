@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { LocalStorageService } from 'src/app/shared/localStorage';
 import { ToggleService } from 'src/app/shared/switchService';
 import { Product } from '../product.model';

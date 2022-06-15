@@ -9,10 +9,23 @@ import { Product } from '../../product.model';
 export class ProductItemComponent implements OnInit {
   @Input() product:Product;
   @Input() index:number
+
+  isExpanded:boolean;
+
+  changeExpanded(e:Event){
+    e.stopPropagation()
+    this.isExpanded=!this.isExpanded
+  }
+
+  sliceString(string:string){
+  const length = 120;
+  return string.substring(0, length) + '...';
   
+  }
   constructor() { }
 
   ngOnInit() {
+    console.log(this.sliceString(this.product.description))
   }
 
 }

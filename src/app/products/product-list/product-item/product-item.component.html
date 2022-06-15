@@ -5,9 +5,12 @@
     <img class="card__img" [src]="product.imagePath" [alt]="product.name" />
     <div class="card__content">
         <h2 class="card__name">{{product.name}}</h2>
-        <p class="card__description">
-            {{product.description}}
+        <p 
+        
+        class="card__description">
+{{isExpanded ? product.description : sliceString(product.description)}}
         </p>
+        <button (click)="changeExpanded($event)">Read more</button>
         <p class="card__type">{{product.type}}</p>
         <ul class="price-list">
             <li  

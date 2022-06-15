@@ -4,6 +4,9 @@
       <a class="nav__link" routerLink="products" href="#">Products Store</a>
     </li>
   </ul>
+  <div class="search">
+    <input type="text" class="search__input" [(ngModel)]="searchValue" (keyup)="search($event)">
+  </div>
 <div class="switch">
    <label class="switch__label">User</label>
    <div class="switch__control">

@@ -13,39 +13,42 @@ import { ProductService } from "../product.service";
   styleUrls: ["./product-list.component.scss"],
 })
 export class ProductListComponent implements OnInit {
-  isAdmin:boolean;
+  isAdmin: boolean;
   products: Product[];
   subscription: Subscription;
+  searchKey: string = "";
   constructor(
     private _productService: ProductService,
-    private _localStorage:LocalStorageService,
-    private _toggleService:ToggleService,
+    private _localStorage: LocalStorageService,
+    private _toggleService: ToggleService,
     private _router: Router,
     private _route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.isAdmin = this._localStorage.get('isAdmin')
-    this.subscription = this._toggleService.isAdmin.subscribe(isAdmin=>{
-      this.isAdmin = isAdmin
-      })
+    this.isAdmin = this._localStorage.get("isAdmin");
+
+    this.subscription = this._toggleService.isAdmin.subscribe((isAdmin) => {
+      this.isAdmin = isAdmin;
+    });
+
     this.subscription = this._productService.productsChanged.subscribe(
       (product: Product[]) => {
         this.products = product;
       }
     );
     this.products = this._productService.getProducts();
+    this._productService.search.subscribe((val:string)=>{
+      this.searchKey=val
+    })
   }
-
 
   onNewProduct() {
-    this._router.navigate(["products/new"]); 
-    let modal_t  = document.getElementById('modal_product')
-    if(modal_t){
-      modal_t.classList.remove('hidden')
-      modal_t.classList.add('show');
+    this._router.navigate(["products/new"]);
+    let modal_t = document.getElementById("modal_product");
+    if (modal_t) {
+      modal_t.classList.remove("hidden");
+      modal_t.classList.add("show");
     }
-
   }
- 
 }

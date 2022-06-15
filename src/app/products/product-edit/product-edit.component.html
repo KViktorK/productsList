@@ -25,7 +25,11 @@
     </div>
     <div class="product-form__item">
       <label for="type" class="item-label">Type</label>
-      <input class="item-input" id="type" type="text" formControlName="type" />
+      <select formControlName="type">
+        <option *ngFor="let type of typeList
+        "[ngValue]="type.name"
+        >{{type.name}}</option>
+      </select>
     </div>
     <div formArrayName="prices">
       <div

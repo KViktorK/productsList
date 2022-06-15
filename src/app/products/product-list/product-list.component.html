@@ -7,7 +7,7 @@
 <div class="container">
     <ul class="products-list">
         <app-product-item
-        *ngFor="let productItem of products;let i=index"
+        *ngFor="let productItem of products | appFilter:searchKey;let i=index"
         [product]="productItem"
         [index]="i"
         >

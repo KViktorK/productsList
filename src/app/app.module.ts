@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
@@ -17,6 +17,8 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
 import { LocalStorageService } from './shared/localStorage';
 import { CommonModule } from '@angular/common';
 import { ToggleService } from './shared/switchService';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { FilterPipe } from './shared/filte.pipe';
 
 
 
@@ -31,8 +33,8 @@ import { ToggleService } from './shared/switchService';
     ProductEditComponent,
     ModalComponent,
     ProductDetailComponent,
-
-
+    DropdownDirective,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,10 @@ import { ToggleService } from './shared/switchService';
 
   ],
   providers: [ProductService,LocalStorageService,ToggleService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule { }
