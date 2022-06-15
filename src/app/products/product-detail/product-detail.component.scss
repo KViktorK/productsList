@@ -1,0 +1,14 @@
+.product__item {
+    width: 100%;
+    .card {
+    display: flex;
+      padding: 16px;
+      border-radius: 4px;   
+      .card__img{
+      display: block;
+      max-width: 50%;
+      height: auto;
+    }
+      }
+  }
+  

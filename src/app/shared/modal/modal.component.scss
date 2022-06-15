@@ -1,0 +1,33 @@
+.show {
+  display: flex;
+}
+.hidden {
+  display: none;
+}
+.modal {
+    z-index: 1000;
+    position: absolute;
+    float: left;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    max-width: 50%;
+    height: 50%;
+}
+.modal-body {
+    display: flex;
+    justify-content: center;
+  background: #fff;
+  padding: 25px;
+  width: 100%;
+}
+.modal-background {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+  background-color: black;
+}

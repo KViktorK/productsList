@@ -1,15 +1,20 @@
+export class Price{
+    constructor(public value:number){}
+}
+
+
 export class Product {
   public name: string;
   public description: string;
   public imagePath: string;
-  public prices: number[];
+  public prices: Price[];
   public type:string
 
   constructor(
     name: string,
     description: string,
     imagePath: string,
-    prices: number[],
+    prices: Price[],
     type:string
   ) {
     this.name = name;
@@ -18,4 +23,5 @@ export class Product {
     this.prices = prices;
     this.type = type;
   }
+
 }

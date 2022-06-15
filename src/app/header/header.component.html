@@ -1,8 +1,28 @@
 <header class="page-header">
-    <a class="logo page-header__logo" href="">Products Store</a>
-    <ul class="nav">
-      <li class="nav__item"><a class="nav__link" href="">Store</a></li>
-      <li class="nav__item"><a class="nav__link" href="">Card</a></li>
-      <li class="nav__item"><a class="nav__link" href="">Moderator</a></li>
-    </ul>
+  <ul class="nav">
+    <li class="nav__item">
+      <a class="nav__link" routerLink="products" href="#">Products Store</a>
+    </li>
+  </ul>
+<div class="switch">
+   <label class="switch__label">User</label>
+   <div class="switch__control">
+      <input
+        (change)="toggle($event)"
+         class="switch__toggle"
+         type="checkbox"
+         [checked]="isAdmin"
+         name="theme"
+         id="switch-toggle"
+       />
+       <label
+         aria-hidden="true"
+         class="switch__track"
+         for="switch-toggle"
+       >
+       </label>
+       <div aria-hidden="true" class="switch__marker"></div>
+     </div>
+     <label class="switch__label">Admin</label>
+</div>
 </header>

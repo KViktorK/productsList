@@ -1,0 +1,68 @@
+<app-modal id="modal_product">
+  <form class="product-form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <h2 class="product-form__title">Please provide product details</h2>
+    <div class="product-form__item">
+      <label for="name" class="item-label">Name</label>
+      <input class="item-input" id="name" type="text" formControlName="name" />
+    </div>
+    <div class="product-form__item">
+      <label for="imagePath" class="item-label">Image Url</label>
+      <input
+        class="item-input"
+        id="imagePath"
+        type="text"
+        formControlName="imagePath"
+      />
+    </div>
+    <div class="product-form__item">
+      <label for="description" class="item-label">Description</label>
+      <textarea
+        class="item-input"
+        id="description"
+        type="text"
+        formControlName="description"
+      ></textarea>
+    </div>
+    <div class="product-form__item">
+      <label for="type" class="item-label">Type</label>
+      <input class="item-input" id="type" type="text" formControlName="type" />
+    </div>
+    <div formArrayName="prices">
+      <div
+        class="product-form__item"
+        *ngFor="
+          let ingredientCtrl of productForm.get('prices')['controls'];
+          let i = index
+        "
+        [formGroupName]="i"
+      >
+        <input type="text" class="item-input" formControlName="value" />
+        <div>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="onDeletePrice(i)"
+          >
+            X
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <button type="button" class="price-btn" (click)="onAddPrice()">
+        Add Price
+      </button>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-success"
+      [disabled]="!productForm.valid"
+    >
+      Save
+    </button>
+    <button type="button" class="btn btn-danger" (click)="onCancel()">
+      Cancel
+    </button>
+  </form>
+</app-modal>

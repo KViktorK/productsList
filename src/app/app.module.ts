@@ -6,10 +6,20 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductItemComponent } from './products/product-list/product-item/product-item.component';
-import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from './products/product.service';
 import { HeaderComponent } from './header/header.component';
+import { AppRoutingModule } from './app.routing.module';
+import { ProductEditComponent } from './products/product-edit/product-edit.component';
+import { ModalComponent } from './shared/modal/modal.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { LocalStorageService } from './shared/localStorage';
+import { CommonModule } from '@angular/common';
+import { ToggleService } from './shared/switchService';
+
+
+
 
 @NgModule({
   declarations: [
@@ -17,15 +27,24 @@ import { HeaderComponent } from './header/header.component';
     ProductsComponent,
     ProductListComponent,
     ProductItemComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductEditComponent,
+    ModalComponent,
+    ProductDetailComponent,
+
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([])
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+
   ],
-  providers: [ProductService],
+  providers: [ProductService,LocalStorageService,ToggleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

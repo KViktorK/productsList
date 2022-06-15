@@ -1,3 +1,9 @@
+<button class="btn-new-product"
+(click)="onNewProduct()"
+*ngIf="isAdmin"
+>
+    New Product
+</button>
 <div class="container">
     <ul class="products-list">
         <app-product-item
@@ -8,3 +14,4 @@
         </app-product-item>
     </ul>
 </div>
+

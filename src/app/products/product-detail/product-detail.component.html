@@ -1,0 +1,29 @@
+<app-modal id="modal_product-item">
+  <li class="product__item">
+    <article class="card">
+      <img class="card__img" [src]="product.imagePath" [alt]="product.name" />
+      <div class="card__content">
+        <h2 class="card__name">{{ product.name }}</h2>
+        <p class="card__description">
+          {{ product.description }}
+        </p>
+        <p class="card__type">{{ product.type }}</p>
+        <ul class="price-list">
+          <li class="price-list__item" *ngFor="let price of product.prices">
+            {{ price.value }}
+          </li>
+        </ul>
+      </div>
+    </article>
+    <div class="product__item-btn"
+    *ngIf="isAdmin">
+      <button 
+      (click)="onEditProduct()"
+      class="card__button">Edit</button>
+      <button class="card__button"
+      (click)="onDelete()"
+      >Delete</button>
+    </div>
+  </li>
+  <button (click)="onCancel()">X</button>
+</app-modal>

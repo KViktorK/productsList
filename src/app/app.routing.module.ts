@@ -1,9 +1,17 @@
 import { NgModule } from "@angular/core";
-import { Routes, RouterModule, PreloadAllModules } from "@angular/router";
-import { ProductListComponent } from "./products/product-list/product-list.component";
+import { Routes, RouterModule } from "@angular/router";
+
+import { ProductDetailComponent } from "./products/product-detail/product-detail.component";
+import { ProductEditComponent } from "./products/product-edit/product-edit.component";
+import { ProductsComponent } from "./products/products.component";
 
 const appRoutes: Routes = [
- 
+ {path: '',redirectTo: '/products', pathMatch: 'full' },
+ {path:'products',component: ProductsComponent, children:[
+    {path:'new',component:ProductEditComponent},
+    {path:':id',component:ProductDetailComponent},
+    {path:':id/edit',component: ProductEditComponent}
+ ]},
 ];
 
 @NgModule({
@@ -12,4 +20,6 @@ const appRoutes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+
+}
