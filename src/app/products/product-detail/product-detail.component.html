@@ -1,5 +1,5 @@
 <app-modal id="modal_product-item">
-  <li class="product__item">
+  <a class="product__item">
     <article class="card">
       <img class="card__img" [src]="product.imagePath" [alt]="product.name" />
       <div class="card__content">
@@ -22,7 +22,7 @@
       (click)="onEditProduct()"
       class="admin-btn-list__button">Edit</button>
       <button class="admin-btn-list__button"
-      (click)="onDelete()"
+      (click)="onDialog()"
       >Delete</button>
     </div>
       </div>
@@ -32,7 +32,10 @@
         </svg>
       </button>
     </article>
-    
-  </li>
+  </a>
   
 </app-modal>
+<app-dialog 
+(delete)="onDelete($event)"
+*ngIf="dialogService.showDialog">
+</app-dialog>

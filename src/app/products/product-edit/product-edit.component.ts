@@ -1,4 +1,4 @@
-import { Component, OnInit, Type } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormArray, FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { IType, typeList } from "src/app/shared/typeList";
@@ -22,7 +22,6 @@ export class ProductEditComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log();
     typeList.map((item: IType) => {
       this.typeList.push(item);
     });
@@ -45,7 +44,6 @@ export class ProductEditComponent implements OnInit {
       productName = product.name;
       productImagePath = product.imagePath;
       productDescription = product.description;
-      console.log(product.type, "TYPE");
       productType = product.type;
       if (product["prices"]) {
         for (let price of product.prices) {
@@ -58,7 +56,6 @@ export class ProductEditComponent implements OnInit {
             })
           );
         }
-        console.log(productPrices.value);
       }
     }
     this.productForm = new FormGroup({
@@ -94,7 +91,6 @@ export class ProductEditComponent implements OnInit {
 
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach((field) => {
-      console.log(field);
       const control = formGroup.get(field);
       if (control instanceof FormControl) {
         control.markAsTouched({ onlySelf: true });

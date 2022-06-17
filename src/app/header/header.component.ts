@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ProductService } from '../products/product.service';
 import { LocalStorageService } from '../shared/localStorage';
 import { ToggleService } from '../shared/switchService';

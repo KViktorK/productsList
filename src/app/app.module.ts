@@ -20,7 +20,8 @@ import { ToggleService } from './shared/switchService';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { FilterPipe } from './shared/filte.pipe';
 import { ErrorComponent } from './products/product-edit/error/error.component';
-import { AlerModalComponent } from './products/product-edit/aler-modal/aler-modal.component';
+import { DialogComponent } from './shared/dialog/dialog.component';
+import { DialogService } from './shared/dialog/dialogService';
 
 
 
@@ -38,7 +39,7 @@ import { AlerModalComponent } from './products/product-edit/aler-modal/aler-moda
     DropdownDirective,
     FilterPipe,
     ErrorComponent,
-    AlerModalComponent
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +51,7 @@ import { AlerModalComponent } from './products/product-edit/aler-modal/aler-moda
     CommonModule,
 
   ],
-  providers: [ProductService,LocalStorageService,ToggleService],
+  providers: [ProductService,LocalStorageService,ToggleService, DialogService],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

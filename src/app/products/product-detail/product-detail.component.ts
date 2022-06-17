@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { DialogService } from 'src/app/shared/dialog/dialogService';
 import { LocalStorageService } from 'src/app/shared/localStorage';
 import { ToggleService } from 'src/app/shared/switchService';
 import { Product } from '../product.model';
@@ -17,7 +18,9 @@ export class ProductDetailComponent implements OnInit {
   isAdmin:boolean;
   subscription: Subscription;
 
-  constructor(private _productService: ProductService,
+  constructor(
+    public dialogService:DialogService,
+    private _productService: ProductService,
     private _route: ActivatedRoute,
     private _router: Router,
     private _toggleService:ToggleService,
@@ -32,21 +35,21 @@ export class ProductDetailComponent implements OnInit {
       }
     )
     this.isAdmin = this._localStorage.get('isAdmin')
-    console.log(this.isAdmin)
   }
  onEditProduct(){
   this._router.navigate(['edit'],{relativeTo:this._route})
-  console.log('hello')
  }
  onDelete(){
   this._productService.deleteProduct(this.id);
   this._router.navigate(['/products'])
  }
-
   onCancel() {
     let modal_item  = document.getElementById('modal_product-item')
     modal_item.classList.remove('show')
     modal_item.classList.add('hidden');
     this._router.navigate(['../'], {relativeTo: this._route});
+  }
+  onDialog(){
+    this.dialogService.showDialog = !this.dialogService.showDialog
   }
 }

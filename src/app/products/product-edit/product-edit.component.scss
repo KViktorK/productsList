@@ -32,6 +32,10 @@
     border-radius: 10px;
     padding: 10px 15px;
   }
+  .price-btn:focus,.price-btn:hover{
+    background-color: #2196f3;
+    color: #fff;
+  }
   &__item.price{
     display: flex;
   }
@@ -39,7 +43,10 @@
   color: #2196f3;
   padding: 10px 15px;
 }
-  
+.cancel-btn:hover,.cancel-btn:focus{
+  background-color: #2196f3;
+  color: #fff;
+}
 .admin-btn{
   display: flex;
   justify-content: space-between;
@@ -49,6 +56,10 @@
   padding: 15px 50px;
     color: #2196f3;
     border: 2px solid #2196f3;
+  }
+  .btn:hover,.btn:focus{
+    background-color: #2196f3;
+    color: #fff;
   }
 }
 .is-invalid {

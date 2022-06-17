@@ -32,7 +32,6 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.isAdmin = this._localStorage.get("isAdmin");
-
     this.subscription = this._toggleService.isAdmin.subscribe((isAdmin) => {
       this.isAdmin = isAdmin;
     });

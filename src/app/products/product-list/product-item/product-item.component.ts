@@ -25,7 +25,7 @@ export class ProductItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.sliceString(this.product.description))
+  
   }
 
 }

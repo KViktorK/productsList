@@ -1,0 +1,8 @@
+<div id="dialog_modal">
+ Please click chekbox if you want to remove a product
+  <input type="checkbox" [checked]="check" (click)="onToggle()"/>
+  <div class="btn-container"> 
+    <button class="btn-container__item" [disabled]="!check" (click)="onDelete()" >Yes</button>
+    <button class="btn-container__item" (click)="onCancel()">No</button>
+  </div>
+</div>

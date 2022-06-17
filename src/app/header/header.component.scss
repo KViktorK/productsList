@@ -18,6 +18,10 @@
       text-decoration: none;
       color: #fff;
     }
+    &__link:focus,&__link:hover{
+      color: #2196f3;
+      background-color: #fff;
+    }
     &__item:not(:last-child) {
       margin-right: 10px;
     }

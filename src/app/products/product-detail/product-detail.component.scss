@@ -20,6 +20,10 @@
       height: 15px;
       fill: #2196f3;
    }
+   &__cancel:hover,&__cancel:focus{
+    fill:#fff;
+    background-color: #2196f3;
+   }
    .price-list{
     display: flex;
     &__item{
@@ -41,6 +45,10 @@ display: flex;
     color: #2196f3;
     border: 2px solid #2196f3;
   padding: 10px 15px;
+  }
+  &__button:hover,&__button:focus{
+    color: #fff;
+    background-color: #2196f3;
   }
   
 }

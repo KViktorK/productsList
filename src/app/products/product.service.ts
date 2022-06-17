@@ -71,6 +71,7 @@ export class ProductService {
       "monitor"
     ),
   ];
+  
   getProducts() {
     return this.products.filter(
       x=> 
