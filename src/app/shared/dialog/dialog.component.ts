@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DialogService } from './dialogService';
 
 
@@ -9,7 +9,7 @@ import { DialogService } from './dialogService';
 })
 export class DialogComponent implements OnInit {
   @Output() delete: EventEmitter<any> = new EventEmitter()
-  
+  @Input() message: string;
   check:boolean = false
   
   constructor(
